@@ -1,0 +1,368 @@
+﻿
+ProjeName- GitDemo
+Username - badri12345
+passswod  Github!2345
+
+https://github.com/badri12345/GitDemo
+
+
+Git Branching startegies
+-------------------------
+
+----------------------
+- Branching is much more light
+- Branching is very fast (merging and creating branch is very fast)
+
+Branching in Git
+-----------------
+
+- Branch is a pointer to a commit
+
+- Default branch is master
+  - points to latest commit
+  - Moves forward with every commit
+
+- Use Branches for
+  - Features
+  - Bugs
+  
+For  one product , if you have different client then for each client we have separate code release , then we need to create different different release  branch.
+
+creating a copy of the code is called branching.
+we are managing the braching for maintaing the code smoothly.
+
+Scenario: we have 2 clinet where the requirement is different for the customer. 1st client requirement should not display to 2nd client and vice versa.
+
+For every customer we will maintain a Branch.  For client1 we create a branch from master branch and 2nd client we will create a another branch.
+ These branchs are called as customer branchs.
+
+All every customer braches have separate release branches. for every customer they have small releases.
+
+Branching startegies varies from one project to other project.( Agile project , iteretive project)
+
+Let see for one product we have 3 areas of develement. each developer is working on each area.  At the end we will merge all the area and we deliver to the 
+client as once product.
+
+1. tracking Order
+2. mobile app
+3. performance improvements
+
+we will create many copies of same code. A team will work on each copies and will try to fix the issues.
+
+so we will create virtual copies and developer will work on each copies and at the end we will merge the all the copies and create the final code.
+
+When we are creating branches , one developer of int branach cannot see the other developer's dev branches. all branches are independent of each other.
+
+
+Goto gitbash and goto the project and open the gitbash inside the folder.
+
+we can see a default branch already present . that is "master branch". Master branch created automatically.
+
+git branch -a ( To see all the local and remote branch and current active branch)
+
+git checkout -b uat ( to create a uat branch and take you to the branch or moving to the branch )
+
+git checkout  master ( we will able to see , my branch changed to master)
+git branch uat
+git checkout uat
+
+whatever you create in uat branch , it will not appear in the master branch. and whatever you will create in master branch , it will not appear in the Uat branch.
+
+Now go to uat branch and create below files.
+
+git checkout uat
+
+git branch ( To see the no. of branch)
+ 
+touch src/uat.txt
+git status
+git add .
+git commit -m " uat.txt file added"
+
+Now we are pushing newly created branch.
+
+git push <name of the remote> < name of the branch name>
+git push origin uat
+
+whatever we do in git , it store in local reposotiry. that is called .git file.
+
+open the .git folder and see the config file. [remote "origin"]
+open the gitbase and got to .git folder and see the config fie
+
+The default remote server is "origin"
+
+whenever you are pushing your file to a new branch , we have to use remote origin. ([remote "origin"].  config file  contain our server path 
+from where we are doing the clone. By default git create origin. we use any name  instead of origin but we have to change the origin value). 
+But as a best practise we are using  name as origin.
+
+whenever you are pushing something to master , then you can use git push.
+
+Now you can see "uat" branch is present in the folder structure.
+
+git checkout master
+
+Now login to github.com
+
+verify "uat" branch should be present in the github.
+
+verify uat.txt file is present in Uat branch. But uat.txt will not be available in the master branch.
+
+
+To create a "Int" branch  from the Uat branch
+-----------------------------------------------
+
+Now you are in Uat branach
+
+git checkout -b int
+
+touch src/int.txt 
+git status
+git add .
+git commit -m "Int branch added"
+
+git push origin int
+
+Now login to github.com
+
+verify "Int" branch should be present in the github.
+
+all the folder of Uat branchs should present in Int branch
+
+Create a "Sprint" Branch from the Integration branch (int branch)
+-----------------------------------------------------
+
+git checkout -b Sprint1
+
+touch src/Sprint1.txt
+
+git status
+git add .
+
+git commit -m "Sprint branch  added"
+
+git push origin Sprint1
+
+merging
+-------
+Now i want sprint1 branch to be merge with Int branch
+-----------------------------------------------------
+whatever modification happened in the sprint branch, i want to make this thing available in int branch
+
+This process is called merging.
+
+so sprint1 branch needs to merge with Integration branch (int branch)
+we have to be in that branch where our merge has to  happen. ( here i should be int branch)
+
+git checkout Int
+git merge Sprint1 
+
+git status
+
+git push origin Int
+
+Now login to github.com
+
+verify "Int" branch , now all the files from Sprint1 branch should be present in the Int Branch now.
+
+After merge no required of commit. directly we can do the push.
+
+Now i want Int branch to be merge with Uat branch
+-----------------------------------------------------
+git checkout uat
+git merge Int 
+
+git status
+
+git push origin uat
+
+Now login to github.com
+
+verify "uat" branch , now all the files from int branch should be present in the uat Branch now.
+
+Now i want to start a new branch called sprint2. so we have create the sprint2 branch from integration branch.
+
+To create a Sprint2 branch from Int
+-----------------------------------
+
+git checkout Int
+git checkout -b sprint2
+touch src/sprint2.txt
+
+
+
+ Creating a Branch on Github
+ ---------------------------
+ click on the branch dropdown and enter "simple-branch" and click on enter
+ 
+ changes to simple-branch and modify one file
+ 
+ now verify that modified file should not be present in the master branch.
+ 
+ Go to master baranch and verify that file.
+ 
+ Commands for Branch
+ -------------------
+ 
+ git branch <branch-name>
+ git checkout <branch-name> ( To go that particular branch)
+ 
+ git push -u <origin> < branch-name>
+ 
+ Local Branch and push to Git Hub
+ --------------------------------
+ cd Banking_project
+ git status
+ 
+ git checkout -b "Develop" ( it will create a Develop branch and switch to Develop branch)
+ 
+ create a Test1.txt file in develop branch in command promt
+ 
+ git add .
+ git commit -m "file created"
+ 
+ git push -u origin Develop
+ 
+ Go to Github and verify the newly created branch
+
+GIT - TAG OPERATION
+-------------------
+
+Tag operation allows giving meaningful names to a specific version in the repository. Suppose
+user-a and user-b decide to tag their project code so that they can later access it easily
+
+CREATE TAGS
+-----------
+Let us tag the current HEAD by using the git tag command. User-a provides a tag name with -a
+option and provides a tag message with –m option
+
+git tag -a 'Release_1_0' -m 'Tagged basic string operation code' HEAD
+
+If you want to tag a particular commit, then use the appropriate COMMIT ID instead of the HEAD
+pointer. User1 uses the following command to push the tag into the remote repository
+
+git push origin tag Release_1_0
+
+User-a created tags. Now, user-b can view all the available tags by using the Git tag command with
+–l option.
+
+git tag -l
+
+git show Release_1_0
+
+git tag -d Release_1_0 ( delete a tag)
+
+
+
+1. Tagging is nothing but labeling the branch.
+2. while commiting , we are doing the tagging.
+3. whenever we are giving the code to customer , we tagging as Release 1.1
+4. Then we modify the code and give to customer  then , we are tagging as Release 1.2
+5.Tagging is a name given to Release branch. so later point of time we can identify which release is given to customer.
+6. Tag is nothing but a label apply to a commit.
+7. git log ( to see the history of our bramch)
+8. git log --oneline( it will display history with proper format)
+9. git log --oneline --graph
+ 
+  Working with Tags
+ ------------------
+ 
+ A tag points to an important point in history
+ - v1.0
+ 
+ 2 Types of tags
+ 
+ - Ligthweight 
+ - Annotated
+ 
+ 
+ 
+ git tag stable master ( stable tag created in master branch)
+ 
+ git tag ( you should able to see tag name)
+ 
+ git log --oneline --graph --decorate --all
+ 
+ git tag -a v0.1 -m "0.1 release"  < 7 digit commit id>
+ 
+ git tag
+ 
+  git tag -a v0.2 -m "0.2release"  < another 7 digit commit id>
+  git tag
+  
+  git push --tag
+  
+  Go to gitHub and verify release tab. you should able to see 3 release because you have created 3 tag.
+  
+  click on Tag tab , you will able to see the details.
+  
+  
+
+Git Lifecycle
+------------
+
+1.working directory -> pull the code from github(private) or bitbucket server
+
+2. you created some files ( files present in the unstagging Area)
+3.  git add . ( pushing the newly created file to stagging Area)
+4.  git commit ( pushing the file from stagging area to local repository)
+5. git push - ( pushing the commited file from local repository to remote repository)
+6. whie pushing you need provide your userid and password
+
+
+
+-----------------------------
+git stash
+----------
+
+Suppose you are implementing a new feature for your product. Your code is in progress and suddenly a customer escalation comes. Because of this, 
+you have to keep aside your new feature work for a few hours. You cannot commit your partial code and also cannot throw away your changes. 
+
+So you need some temporary space, where you can store your partial changes and later
+on commit it.
+
+In Git, the stash operation takes your modified tracked files, stages changes, and saves them on a
+stack of unfinished changes that you can reapply at any time.
+
+
+currently i am working on the master branch. i have modified one file. Now i have to start working in another branch. to save this task in same local repository .
+ so i have to do git stash
+
+
+git status -s
+
+Now, you want to switch branches for customer escalation, but you don’t want to commit what
+you’ve been working on yet; so you’ll stash the changes. To push a new stash onto your stack, run
+the git stash command.
+
+Now, your working directory is clean and all the changes are saved on a stack
+
+Suppose you have resolved the customer escalation and you are back on your new feature looking
+for your half-done code, just execute the git stash pop command, to remove the changes from the
+stack and place them in the current working directory.
+
+-----------------------------
+git checkout master
+
+Then modify the ReadMe.txt file ( added one line)
+
+git stash
+
+cat ReadMe.txt  ( newly added line should not present in the ReadMe.txt)
+	
+git stash list
+
+git stash apply ( again i want the changes get it back in my ReadMe.txt file)
+
+cat ReadMe.txt  ( newly added line should present in the ReadMe.txt)
+
+Note: if you do more than one git stash , then we have to do git stash list and we will get the list of id and from the id we will do the git stash apply on those id. if without id , you will apply the git stash apply , then you will get last changes , not the fisrt changes
+
+git stash pop.
+
+if you do the git stash apply. then you will get back the changes.
+git stash list ( still you will see the item changes in stash folder.
+
+But if you do the  git stash pop ( it will remove the changes from git stash item  folder )
+Tagging
+stash
+Rebase

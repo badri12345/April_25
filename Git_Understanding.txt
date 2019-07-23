@@ -1,0 +1,180 @@
+Git Understanding
+------------------
+
+VCS( Version Control system)
+-----------------------------
+Git is a Version Control system (VCS) or Source Control Management(SCM)
+
+SCM/VCS is a collaboration platform for developer ( To store your document and artifactory in different version)
+
+- Repository : Git helps us to create repositories. Here data is stored and managed in a organized order.
+- Version:  Different version of same artifact can be stored. 
+- Artifact: Helps to manage changes in artifact. Git allows to do a undo in current changes in Artifact.Git also allows restrotion of presvious steps of Artifact.
+- Comparison: Enables comparison of different version of same artifact. 
+- Collaboration: Promotes Collaboration among Developer
+- Accountability: Maintains Accountability. Git allows us to track all users  an exact changes that they have made.
+
+BackGround of Git
+-----------------
+
+- Git was born on 2005.
+- Linus Torvalds was the creater of Git.
+- Linus Torvalds Create Git to meet the needs of Linux project.
+
+What is GitHub
+---------------
+Web Based -> It is a Git Repository with a web Interface.
+Origin -> GitHub was born on 2008
+Subscription -> GitHub has both free and paid plan
+User -> Need to create user account
+Largest Host -> It is arguably the largest hosted Git repository. It has around 12 million user account. and over 31 million repository.
+
+Open an account in GitHub.  -> https://github.com
+
+click on pricing , to see the different pricing structure.
+
+You can see all the source code in the repository.
+
+using git clone command , you can copy the repositories to your local computer.
+
+What is Fork
+-------------
+- Creating a project from another existing project
+- Encourages project advancement & collaboration
+- Encourages outside contribution
+- Forks can be updated
+
+
+search for "github sample java project" in the google
+
+click on "fork" symbol. Now this project will fork to your own github account.
+
+fork created a copy of the project in your own github account.
+
+Copying a GitHub repository (Lab)
+---------------------------------
+
+copy the repositoryfrom the github and go to the D  drive and
+
+git clone <url>
+
+git clone https://github.com/awsdevops009/sample-java-project.git
+
+
+3 Main States of artifact ( How Git works)
+--------------------------
+
+Modified : Here , the artifact goes through changes made by the user
+
+Staged: Here , the User/developer adds the artifact to Git index or staging Area.
+
+Committed: Here , the artifact gets safely stored 
+
+As per Git flow, Artifact sequentially moves from modified to stage and subsequentially to commited stage based on the command execute.
+
+working Directory -----> Staging Area ---> Repository directory(.git) ->  Remote Repository
+
+working Directory -> 
+
+Staging Area -> Also called index , this is where all releated changes are built up.
+
+Committ Area - This is where your committed files stored. This is where all artifact are stacked safely in Git Databse. .git directory where
+ it store in the commited artifact and metadata for the project.
+
+
+Git Setup on Windows (Lab)
+--------------------------
+
+Download git bash from https://git-scm.com/downloads
+
+Then open the gitbash in the d drive .
+
+increase the screen size by pressing -> Ctrl + "+" button 
+
+git clone https://github.com/awsdevops009/sample-java-project.git
+
+create a file called demofile in the directory 
+
+git add demofile ( now it added to the staging area)
+
+git status 
+
+git rm --cached demofile ( To revert back the file to working directory)
+
+git status    
+
+Commit the changes
+------------------
+
+git add demofile
+
+git commit -m "File added"
+
+git Status -> It tells us the status of the working directory and staging area.
+git log -> displays committed snapshots or commit history
+git log --follow abc.txt
+
+create 2 new files in the directory
+Test1 and Test2 file
+
+git status -s
+
+now add one file using git add 
+
+git add Test1
+
+git status -s ( see the difference)
+
+git commit -m "one file commited"
+
+git status -s ( it will show only Test2 file is untracked)
+
+Then modify the Test1 files
+
+ git status -s ( it will show only Test1 file is modified)
+
+ git add Test1
+ 
+git status -s ( it will show only Test1 file is modified with different colour means files added to staging area)
+
+git commit -m "second time  file commited"
+
+git status -s
+
+mv Test1  Test3 ( rename the file Test1 to Test3)
+
+git status -s ( you will able to delete file and untracked file)
+
+Commit History
+---------------
+
+Create a new file Test4
+
+git log
+
+git log --oneline
+
+git log Test1
+
+git log since .. until
+
+git log <one commitid> .. <another comitt id>
+
+git log 234567 .. 567890 --oneline ( to see the log details of one commit id to another commit id)
+
+git log --oneline
+
+git log -n 3 --oneline ( To see the last 3 log details of commit id)
+
+
+git Branching basic
+--------------------
+git branch 
+
+git branch demobranch
+
+though we have create the branch but it is not active.
+
+git checkout demobranch
+
+git log --oneline

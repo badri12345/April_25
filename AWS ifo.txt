@@ -1,0 +1,61 @@
+aws free account  - https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1#
+
+AWS  https://www.youtube.com/watch?v=ye7hgGZwSsY&list=PLJIqXVV4K5LXEGBDPy1mxigzNVMAzkOHv
+
+ AWS site--  https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Home: 
+Password - Narayan7b(
+
+saheed  ==  https://youtu.be/7Imi2mVkpAg
+
+https://www.facebook.com/samthecloudguy/ https://www.slideshare.net/samtheclou...
+https://www.youtube.com/c/SaMtheCloudGuy 
+ppk - puty permisson key
+ec2-user
+
+340257429399
+badriaws
+
+jenkings doccer git maven ancilor jitan -
+
+Rajan
+https://www.aws.training/Account/LogOnOptions
+
+password - Liza!5-6
+
+https://www.youtube.com/playlist?list=PL9ooVrP1hQOFWxRJcGdCot7AgJu29SVV3
+vpc - https://www.youtube.com/watch?v=8VDtcMcWzvc
+
+An IP address has two components, the network address and the host address. A subnet mask separates the IP address into
+the network and host addresses (<network><host>). Subnetting further divides the host part of an IP address into a subnet 
+and host address (<network><subnet><host>) if additional subnetwork is needed. Use the Subnet Calculator to retrieve subnetwork
+ information from IP address and Subnet Mask. It is called a subnet mask because it is used to identify network address of an IP
+ address by perfoming a bitwise AND operation on the netmask.
+
+
+https://181762473971.signin.aws.amazon.com/console
+
+IAM  - https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html
+
+ansibel https://www.youtube.com/watch?v=dCQpaTTTv98&list=RDQMcAGVXulvmxQ&start_radio=1
+
+ssh, dncp,dns,http,https,mfs,sftp
+
+
+GIT
+==========
+ProjeName- GitDemo
+Username - badri12345
+passswod  Github!2345
+
+https://github.com/badri12345/GitDemo
+
+Artifact mane Final built
+
+developer store code Source code
+
+yum - update  clean install. its a local then go to world(assignment)
+
+wget- download kariva (assignment)
+
+selinux  open ssl, open idap
+rpm package 

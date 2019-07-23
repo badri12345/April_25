@@ -1,0 +1,54 @@
+ProjeName- GitDemo
+Username - badri12345
+passswod  Github!2345
+
+https://github.com/badri12345/GitDemo
+
+Artifact mane Final built
+
+developer store code Source code
+
+yum - update  clean install. its a local then go to world(assignment)
+
+wget- download kariva (assignment)
+
+selinux  open ssl, open idap
+rpm package 
+
+git config --global user.email "bnp123@gmail.com"
+git config --global user.name "badri12345"
+git commit -m "file added"
+
+git push origin master
+
+git clone https://github.com/badri12345/GitDemo.git
+ 132  git commit -m "second file added"
+  133  git status
+  134  git push
+
+create file in github four
+then git pull - error come
+
+ 181  git clone https://github.com/badri12345/GitDemo.git
+  182  cd GitDemo
+  183  ls
+  184  ls
+  185  git add .
+  186  git status
+  187  git commit -m "second file added"
+  188  git push
+  189  git push origin master
+  190  history
+
+===================================
+Git Branch
+
+echo "# GitBranchDemo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/badri12345/GitBranchDemo.git
+git push -u origin master
+
+
+team share team commit eclipse project
